@@ -34,7 +34,7 @@ Displays your tasks including Description, Due Date & Status.
 Let you Delete or Update each task.
 Add Todo button for creating a new task.
 
-**Future features**
+**Future features** 
 **1. Friends List**- with an option to tag friends related to your task.
 **2. Media Field**- you will be able to upload relevant media files for  
                                   each task.
