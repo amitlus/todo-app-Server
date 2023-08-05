@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Data
@@ -20,7 +19,7 @@ public class TodoDto {
     private Integer id;
     private String username;
     private String description;
-    private Date dueDate;
+    private LocalDate dueDate;
     private boolean isDone;
 
     @Override

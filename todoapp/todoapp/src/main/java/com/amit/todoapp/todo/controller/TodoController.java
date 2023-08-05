@@ -22,21 +22,24 @@ public class TodoController {
 
     @GetMapping("/users/{username}/todos")
     public List<TodoDto> retrieveTodos(@PathVariable String username) {
-        //return todoService.findByUsername(username);
         return todoRepository.findByUsername(username);
     }
 
     @GetMapping("/users/{username}/todos/{id}")
     public TodoDto retrieveTodo(@PathVariable String username,
                                 @PathVariable int id) {
-        //return todoService.findById(id);
         return todoRepository.findById(id).get();
+    }
+
+    @GetMapping("/users/{username}/todos/urgent")
+    public List<TodoDto> retrieveUrgentTodos(@PathVariable String username) {
+        List<TodoDto> todosList = todoRepository.findByUsername(username);
+        return todoService.findUrgentTodos(todosList);
     }
 
     @DeleteMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username,
                                            @PathVariable int id) {
-        //todoService.deleteById(id);
         todoRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
@@ -44,7 +47,6 @@ public class TodoController {
     @PutMapping("/users/{username}/todos/{id}")
     public TodoDto updateTodo(@PathVariable String username,
                               @PathVariable int id, @RequestBody TodoDto todo) {
-        //todoService.updateTodo(todo);
         todoRepository.save(todo);
         return todo;
     }
