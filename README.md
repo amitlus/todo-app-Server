@@ -12,7 +12,7 @@ The client-side code, implemented using React and Next.js, can be found in [this
 
 Before running the app, ensure that you have a MySQL database connected to it. For convenience, you can use Docker to run MySQL with the following command:
 
-bashCopy code
+Command line code
 
 `docker run --detach --env MYSQL_ROOT_PASSWORD=rootpassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=password --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:8-oracle` 
 
